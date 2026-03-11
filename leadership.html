@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta
+        name="description"
+        content="Meet the leadership team and founders of Empowered Women Rising Trust Association (EWRTA)."
+      />
+      <title>EWRTA | Leadership</title>
+
+      <!-- Preconnect for performance -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet"
+      />
+      <link rel="stylesheet" href="./css/style.css" />
+
+      <style>
+        /* ============================================================
+         ENTERPRISE-GRADE CSS SYSTEM
+         Mobile-First | Accessible | Performance Optimized
+         Color Palette: EWRTA Brand Colors
+         ============================================================ */
+
+        :root {
+          /* --- Brand Colors --- */
+          --deep-purple: #2e0f3a;
+          --rich-purple: #5b2a86;
+          --gold: #d4af37;
+          --soft-gold: #f1e5ac;
+          --off-white: #f8f5f2;
+          --text-dark: #333333;
+
+          /* --- Semantic Color Mappings --- */
+          --color-primary: var(--deep-purple);
+          --color-primary-light: var(--rich-purple);
+          --color-accent: var(--gold);
+          --color-accent-soft: var(--soft-gold);
+          --color-bg-body: var(--off-white);
+          --color-bg-card: #ffffff;
+          --color-text-main: var(--text-dark);
+          --color-text-muted: #666666;
+
+          /* --- Typography Scale (Fluid) --- */
+          --font-heading: "Montserrat", system-ui, sans-serif;
+          --font-body: "Nunito Sans", system-ui, sans-serif;
+
+          /* --- Spacing Scale (rem) --- */
+          --space-xs: 0.5rem;
+          --space-sm: 1rem;
+          --space-md: 2rem;
+          --space-lg: 3rem;
+          --space-xl: 5rem;
+
+          /* --- Layout & Effects --- */
+          --radius: 8px;
+          --radius-lg: 16px;
+          --shadow-sm: 0 2px 8px rgba(46, 15, 58, 0.06);
+          --shadow-md: 0 8px 24px rgba(46, 15, 58, 0.12);
+          --shadow-lg: 0 15px 40px rgba(46, 15, 58, 0.15);
+          --transition: 200ms ease-in-out;
+        }
+
+        /* --- Global Reset & Base --- */
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+
+        body {
+          font-family: "Nunito Sans", sans-serif;
+          font-weight: 400;
+          background-color: var(--color-bg-body);
+          color: var(--color-text-main);
+          line-height: 1.7;
+          font-size: 1rem;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- Layout Container --- */
+        .container-leadership {
+          width: 90%;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: var(--space-lg) 0;
+        }
+
+        /* --- Page Header --- */
+        .page-header {
+          text-align: center;
+          margin-bottom: var(--space-xl);
+        }
+
+        .page-header h1 {
+          font-family: var(--font-heading);
+          font-size: clamp(2rem, 5vw, 3rem);
+          color: var(--color-primary);
+          margin-bottom: var(--space-xs);
+          font-weight: 700;
+        }
+
+        .page-header::after {
+          content: "";
+          display: block;
+          width: 60px;
+          height: 4px;
+          background: linear-gradient(
+            90deg,
+            var(--color-accent),
+            var(--color-primary-light)
+          );
+          margin: var(--space-sm) auto 0;
+          border-radius: 2px;
+        }
+
+        /* --- Founders Statement Section --- */
+        .statement-section {
+          background-color: var(--color-bg-card);
+          padding: var(--space-md);
+          border-radius: var(--radius-lg);
+          box-shadow: var(--shadow-sm);
+          margin-bottom: var(--space-xl);
+          border-left: 5px solid var(--color-accent);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .statement-section::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: linear-gradient(
+            90deg,
+            var(--color-primary),
+            var(--color-primary-light),
+            var(--color-accent)
+          );
+        }
+
+        .statement-section h2 {
+          font-family: var(--font-heading);
+          font-size: 1.5rem;
+          color: var(--color-primary);
+          margin-bottom: var(--space-sm);
+        }
+
+        .statement-section p {
+          margin-bottom: var(--space-sm);
+          color: var(--color-text-muted);
+          font-size: 1.1rem;
+          line-height: 1.7;
+        }
+
+        .statement-section p:last-child {
+          margin-bottom: 0;
+        }
+
+        /* --- Leadership Grid System (Executive Section) --- */
+        .leadership-section h2 {
+          font-family: var(--font-heading);
+          font-size: 1.75rem;
+          color: var(--color-primary);
+          margin-bottom: var(--space-md);
+          text-align: center;
+        }
+
+        .leadership-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: var(--space-md);
+          justify-content: center;
+        }
+
+        @media (min-width: 640px) {
+          .leadership-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .leadership-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        /* --- Profile Card Component (Executive with photos) --- */
+        .profile-card {
+          background: var(--color-bg-card);
+          border-radius: var(--radius);
+          overflow: hidden;
+          box-shadow: var(--shadow-sm);
+          transition: transform var(--transition), box-shadow var(--transition);
+          display: flex;
+          flex-direction: column;
+          border: 1px solid rgba(46, 15, 58, 0.06);
+        }
+
+        .profile-card:hover {
+          transform: translateY(-5px);
+          box-shadow: var(--shadow-lg);
+        }
+
+        /* --- Image Area (Placeholder System) --- */
+        .profile-image {
+          position: relative;
+          width: 100%;
+          padding-bottom: 125%;
+          background: linear-gradient(
+            135deg,
+            var(--soft-gold),
+            var(--color-bg-body)
+          );
+          overflow: hidden;
+        }
+
+        .profile-image img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center top;
+          transition: opacity var(--transition);
+        }
+
+        /* Placeholder text (visible when image is missing) */
+        .profile-image::before {
+          content: "No Photo Available";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: var(--rich-purple);
+          font-size: 0.9rem;
+          text-align: center;
+          z-index: 0;
+          opacity: 0.5;
+        }
+
+        .profile-image img + ::before {
+          display: none;
+        }
+
+        /* --- Card Content (Executive) --- */
+        .profile-content {
+          padding: var(--space-sm);
+          text-align: center;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          border-top: 3px solid var(--color-accent);
+          background: var(--color-bg-card);
+        }
+
+        .profile-content h3 {
+          font-family: var(--font-heading);
+          font-size: 1.25rem;
+          color: var(--color-primary);
+          margin-bottom: 4px;
+          font-weight: 700;
+        }
+
+        .profile-role {
+          font-weight: 600;
+          color: var(--color-primary-light);
+          font-size: 0.85rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: var(--space-xs);
+        }
+
+        .profile-bio {
+          font-size: 0.9rem;
+          color: var(--color-text-muted);
+          line-height: 1.5;
+        }
+
+        /* ============================================================
+         OTHER LEADERSHIP MEMBERS SECTION — NEW STYLES
+         No-photo card layout. Responsive 3/2/1 column grid.
+         Seamlessly integrated with existing EWRTA brand system.
+         ============================================================ */
+
+        /* --- Section Wrapper --- */
+        .other-leadership-section {
+          /* Top margin separates it visually from the Executive Team above */
+          margin-top: var(--space-xl);
+          margin-bottom: var(--space-xl);
+        }
+
+        /* --- Section Header Block --- */
+        .other-leadership-header {
+          text-align: center;
+          margin-bottom: var(--space-md);
+          position: relative;
+          padding-bottom: var(--space-sm);
+        }
+
+        /* Decorative gradient underline — mirrors .page-header::after */
+        .other-leadership-header::after {
+          content: "";
+          display: block;
+          width: 60px;
+          height: 4px;
+          background: linear-gradient(
+            90deg,
+            var(--color-accent),
+            var(--color-primary-light)
+          );
+          margin: var(--space-xs) auto 0;
+          border-radius: 2px;
+        }
+
+        .other-leadership-header h2 {
+          font-family: var(--font-heading);
+          font-size: clamp(
+            1.5rem,
+            3vw,
+            1.875rem
+          ); /* fluid: 1.5rem → 1.875rem */
+          font-weight: 700;
+          color: var(--color-primary);
+          margin-bottom: var(--space-xs);
+        }
+
+        .other-leadership-header p {
+          font-family: var(--font-body);
+          font-size: 1rem;
+          color: var(--color-text-muted);
+          max-width: 680px;
+          margin: var(--space-xs) auto 0;
+          line-height: 1.7;
+        }
+
+        /* --- Responsive Grid: 1 → 2 → 3 columns --- */
+        .other-leadership-grid {
+          display: grid;
+          grid-template-columns: 1fr; /* Mobile: 1 column  */
+          gap: var(--space-md);
+        }
+
+        /* Tablet: 2 columns at 640px+ */
+        @media (min-width: 640px) {
+          .other-leadership-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        /* Desktop: 3 columns at 1024px+ */
+        @media (min-width: 1024px) {
+          .other-leadership-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        /* --- No-Photo Member Card --- */
+        .member-card {
+          background: var(--color-bg-card);
+          border-radius: var(--radius);
+          border: 1px solid rgba(46, 15, 58, 0.08);
+          box-shadow: var(--shadow-sm);
+          padding: var(--space-md) var(--space-sm);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          transition: transform var(--transition), box-shadow var(--transition),
+            border-color var(--transition);
+          position: relative;
+          overflow: hidden;
+        }
+
+        /* Decorative top accent bar — matches .profile-content border-top */
+        .member-card::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: linear-gradient(
+            90deg,
+            var(--color-accent),
+            var(--color-primary-light)
+          );
+          border-radius: var(--radius) var(--radius) 0 0;
+        }
+
+        /* Subtle hover lift — matches .profile-card:hover */
+        .member-card:hover {
+          transform: translateY(-5px);
+          box-shadow: var(--shadow-lg);
+          border-color: rgba(46, 15, 58, 0.14);
+        }
+
+        /* --- Role Icon / Avatar Placeholder --- */
+        /*
+        A decorative monogram circle replaces the profile photo.
+        It uses the member's initials set via the data-initials attribute.
+        Falls back to a generic icon if not provided.
+      */
+        .member-avatar {
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          background: linear-gradient(
+            135deg,
+            var(--color-primary) 0%,
+            var(--color-primary-light) 100%
+          );
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: var(--space-sm);
+          flex-shrink: 0;
+          /* Soft golden ring to tie into brand accent */
+          box-shadow: 0 0 0 4px var(--soft-gold), var(--shadow-sm);
+        }
+
+        .member-avatar span {
+          font-family: var(--font-heading);
+          font-size: 1.35rem;
+          font-weight: 700;
+          color: var(--color-accent);
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+          line-height: 1;
+          user-select: none;
+        }
+
+        /* --- Card Text Content --- */
+        .member-info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 4px;
+          flex-grow: 1;
+        }
+
+        /* Member Name */
+        .member-name {
+          font-family: var(--font-heading);
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: var(--color-primary);
+          margin-bottom: 2px;
+          line-height: 1.3;
+        }
+
+        /* Role Badge — pill shape matching brand colors */
+        .member-role-badge {
+          display: inline-block;
+          font-family: var(--font-body);
+          font-size: 0.75rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.8px;
+          color: var(--color-primary);
+          background-color: var(--color-accent-soft);
+          border: 1px solid var(--color-accent);
+          border-radius: 999px; /* pill shape */
+          padding: 3px 14px;
+          margin-top: 2px;
+          margin-bottom: var(--space-xs);
+        }
+
+        /* Short responsibility description */
+        .member-description {
+          font-family: var(--font-body);
+          font-size: 0.875rem;
+          color: var(--color-text-muted);
+          line-height: 1.55;
+          margin-top: 6px;
+        }
+
+        /* --- Divider between Executive section and Other Leadership section --- */
+        .section-divider {
+          border: none;
+          border-top: 1px solid rgba(46, 15, 58, 0.1);
+          margin: var(--space-xl) 0 var(--space-xl);
+        }
+
+        /* ============================================================
+         GLOBAL ACCESSIBILITY & UTILITY
+         ============================================================ */
+
+        /* Focus states */
+        a:focus,
+        button:focus {
+          outline: 3px solid var(--color-accent);
+          outline-offset: 2px;
+        }
+
+        /* Text selection */
+        ::selection {
+          background: var(--color-accent);
+          color: var(--color-primary);
+        }
+      </style>
+    </head>
+    <body>
+      <!-- =====================================================
+         SITE HEADER (Unchanged from original template)
+         ===================================================== -->
+      <header>
+        <div class="container">
+          <div class="header-left">
+            <img class="logo" src="./img/ewrta.png" alt="EWRTA Logo" />
+            <div id="branding">
+              <h1><span class="highlight">Empowered Women</span></h1>
+              <h1>Rising Trust Association</h1>
+            </div>
+          </div>
+          <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+          <label for="nav-toggle" class="menu-icon" aria-label="Toggle Menu">
+            <span></span><span></span><span></span>
+          </label>
+          <nav>
+            <ul>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./programs&initiatives.html">Programs</a></li>
+              <li><a href="./get-involved.html">Get Involved</a></li>
+              <li class="current">
+                <a href="./leadership.html">Leadership</a>
+              </li>
+              <li><a href="./gallery.html">Gallery</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+      <main class="container-leadership" role="main">
+        <!-- ── Page Title ──────────────────────────────────── -->
+        <section class="page-header">
+          <h1>Our Leadership</h1>
+        </section>
+
+        <!-- ── Founders' Statement ────────────────────────── -->
+        <section class="statement-section" aria-labelledby="statement-heading">
+          <h2 id="statement-heading">Founders' Statement</h2>
+          <p>
+            Empowered Women Rising Trust Association was established during the
+            COVID-19 era as a response to the need for unity, resilience, and
+            mutual support among women. Despite challenges and setbacks, the
+            vision endured, evolving into a registered organization committed to
+            empowering women and uplifting the girl child.
+          </p>
+          <p>
+            Our journey reflects perseverance, faith, and the unwavering belief
+            that when women rise together, communities are transformed.
+          </p>
+        </section>
+
+        <!-- ── Executive Team (Original, Unchanged) ───────── -->
+        <section class="leadership-section" aria-labelledby="team-heading">
+          <h2 id="team-heading">Executive Team</h2>
+
+          <div class="leadership-grid">
+            <!-- Card 1: Chairperson -->
+            <article class="profile-card">
+              <figure class="profile-image">
+                <img
+                  src="./img/g9.jpeg"
+                  alt="Portrait of Pamela Dzingirai Manyasha, Chairperson"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="profile-content">
+                <h3>Pamela Dzingirai Manyasha</h3>
+                <span class="profile-role">Chairperson</span>
+                <p class="profile-bio"></p>
+              </div>
+            </article>
+
+            <!-- Card 2: Vice Chairperson -->
+            <article class="profile-card">
+              <figure class="profile-image">
+                <img
+                  src="./img/g10.jpeg"
+                  alt="Portrait of Everydah Thulani Bhebhe, Vice Chairperson"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="profile-content">
+                <h3>Everydah Thulani Bhebhe</h3>
+                <span class="profile-role">Vice Chairperson</span>
+                <p class="profile-bio"></p>
+              </div>
+            </article>
+          </div>
+        </section>
+        <!-- ── END: Executive Team ─────────────────────────── -->
+
+        <!-- =====================================================
+           SECTION DIVIDER
+           Visual separator between Executive and Other Leadership
+           ===================================================== -->
+        <hr class="section-divider" aria-hidden="true" />
+
+        <!-- =====================================================
+           OTHER LEADERSHIP MEMBERS SECTION
+           ─────────────────────────────────────────────────────
+           Displays: Secretary, Treasurer, and six Committee
+           Members in a responsive no-photo card grid.
+
+           HOW TO EDIT:
+           • To update a name → change the text inside <h3 class="member-name">
+           • To update initials → change the text inside <span> inside .member-avatar
+           • To update role → change the text inside <span class="member-role-badge">
+           • To update description → change text inside <p class="member-description">
+           • To add a new card → copy any <article class="member-card"> block
+           ===================================================== -->
+        <section
+          class="other-leadership-section"
+          aria-labelledby="other-leadership-heading"
+        >
+          <!-- Section Header -->
+          <header class="other-leadership-header">
+            <h2 id="other-leadership-heading">Other Executive Members</h2>
+            <p>
+              These individuals work firmly to uphold
+              the governance, financial integrity, and operational activities of
+              Empowered Women Rising Trust Association. Their dedication and service are vital to the success of
+              our mission and the growth of our community.
+            </p>
+          </header>
+
+          <!-- ── Member Cards Grid ──────────────────────────── -->
+          <div class="other-leadership-grid">
+            <!-- ── CARD: Secretary ──────────────────────────── -->
+            <!--
+            Edit: Replace "Phyllis Mupambirei" with the actual member name.
+            Edit: Replace "PM" with the member's initials (max 2–3 letters).
+          -->
+            <article
+              class="member-card"
+              aria-label="Leadership card for Secretary"
+            >
+              <!-- Initials Avatar -->
+              <div class="member-avatar" aria-hidden="true">
+                <span>PM</span>
+              </div>
+              <!-- Member Info -->
+              <div class="member-info">
+                <h3 class="member-name">Phyllis Mupambirei</h3>
+                <span class="member-role-badge">Secretary</span>
+                <p class="member-description">
+                  Manages official correspondence, maintains organizational
+                  records, and supports the administration of board meetings and
+                  communications.
+                </p>
+              </div>
+            </article>
+            <!-- ── END: Secretary ────────────────────────────── -->
+
+            <!-- ── CARD: Treasurer ───────────────────────────── -->
+            <!--
+            Edit: Replace "Nyasha Mubako" with the actual member name.
+            Edit: Replace "NM" with the member's initials.
+          -->
+            <article
+              class="member-card"
+              aria-label="Leadership card for Treasurer"
+            >
+              <div class="member-avatar" aria-hidden="true">
+                <span>NM</span>
+              </div>
+              <div class="member-info">
+                <h3 class="member-name">Nyasha Mubako</h3>
+                <span class="member-role-badge">Treasurer</span>
+                <p class="member-description">
+                  Oversees the financial health of the organization, manages
+                  budgets and accounts, and ensures transparent financial
+                  reporting to the board.
+                </p>
+              </div>
+            </article>
+            <!-- ── END: Treasurer ────────────────────────────── -->
+
+            <!-- ── CARD: Committee Member 1 ──────────────────── -->
+            <!--
+            Edit: Replace "Member Name" with the actual member name.
+            Edit: Replace "XX" with the member's initials.
+          -->
+            <article
+              class="member-card"
+              aria-label="Leadership card for Committee Member"
+            >
+              <div class="member-avatar" aria-hidden="true">
+                <span>SR</span>
+              </div>
+              <div class="member-info">
+                <h3 class="member-name">Sasha Rugube</h3>
+                <span class="member-role-badge">Committee Member</span>
+                <p class="member-description">
+                  Contributes to the planning and execution of organizational
+                  programs, community outreach, and strategic initiatives.
+                </p>
+              </div>
+            </article>
+            <!-- ── END: Committee Member 1 ───────────────────── -->
+
+            <!-- ── CARD: Committee Member 2 ──────────────────── -->
+            <article
+              class="member-card"
+              aria-label="Leadership card for Committee Member"
+            >
+              <div class="member-avatar" aria-hidden="true">
+                <span>LN</span>
+              </div>
+              <div class="member-info">
+                <h3 class="member-name">Lea Nyamupachitu</h3>
+                <span class="member-role-badge">Committee Member</span>
+                <p class="member-description">
+                  Contributes to the planning and execution of organizational
+                  programs, community outreach, and strategic initiatives.
+                </p>
+              </div>
+            </article>
+            <!-- ── END: Committee Member 2 ───────────────────── -->
+
+            <!-- ── CARD: Committee Member 3 ──────────────────── -->
+            <article
+              class="member-card"
+              aria-label="Leadership card for Committee Member"
+            >
+              <div class="member-avatar" aria-hidden="true">
+                <span>PM</span>
+              </div>
+              <div class="member-info">
+                <h3 class="member-name">Precious Makanaka Mahlisa</h3>
+                <span class="member-role-badge">Committee Member</span>
+                <p class="member-description">
+                  Contributes to the planning and execution of organizational
+                  programs, community outreach, and strategic initiatives.
+                </p>
+              </div>
+            </article>
+            <!-- ── END: Committee Member 3 ───────────────────── -->
+
+            <!-- ── CARD: Committee Member 4 ──────────────────── -->
+            <article
+              class="member-card"
+              aria-label="Leadership card for Committee Member"
+            >
+              <div class="member-avatar" aria-hidden="true">
+                <span>PM</span>
+              </div>
+              <div class="member-info">
+                <h3 class="member-name">Pretty Mataruse</h3>
+                <span class="member-role-badge">Committee Member</span>
+                <p class="member-description">
+                  Contributes to the planning and execution of organizational
+                  programs, community outreach, and strategic initiatives.
+                </p>
+              </div>
+            </article>
+            <!-- ── END: Committee Member 4 ───────────────────── -->
+
+            <!-- ── CARD: Committee Member 5 ──────────────────── -->
+            <article
+              class="member-card"
+              aria-label="Leadership card for Committee Member"
+            >
+              <div class="member-avatar" aria-hidden="true">
+                <span>LM</span>
+              </div>
+              <div class="member-info">
+                <h3 class="member-name">Lucy Mugadza</h3>
+                <span class="member-role-badge">Committee Member</span>
+                <p class="member-description">
+                  Contributes to the planning and execution of organizational
+                  programs, community outreach, and strategic initiatives.
+                </p>
+              </div>
+            </article>
+            <!-- ── END: Committee Member 5 ───────────────────── -->
+
+            <!-- ── CARD: Committee Member 6 ──────────────────── -->
+            <article
+              class="member-card"
+              aria-label="Leadership card for Committee Member"
+            >
+              <div class="member-avatar" aria-hidden="true">
+                <span>SM</span>
+              </div>
+              <div class="member-info">
+                <h3 class="member-name">Sibongile Mashiri</h3>
+                <span class="member-role-badge">Committee Member</span>
+                <p class="member-description">
+                  Contributes to the planning and execution of organizational
+                  programs, community outreach, and strategic initiatives.
+                </p>
+              </div>
+            </article>
+            <!-- ── END: Committee Member 6 ───────────────────── -->
+          </div>
+          <!-- ── END: Member Cards Grid ─────────────────────── -->
+        </section>
+        <!-- ── END: Other Leadership Members Section ───────── -->
+      </main>
+
+      <hr class="divider" />
+
+      <!-- =====================================================
+         SITE FOOTER (Unchanged from original template)
+         ===================================================== -->
+      <footer class="site-footer">
+        <div class="footer-top">
+          <div class="container footer-grid">
+            <!-- About -->
+            <div class="footer-section footer-about">
+              <div class="footer-branding">
+                <img
+                  class="footer-logo"
+                  src="./img/ewrta.png"
+                  alt="EWRTA Logo"
+                />
+                <h3>
+                  <span class="emp">Empowered Women</span> Rising Trust
+                  Association
+                </h3>
+              </div>
+              <p id="footer-description">
+                A women-led organization dedicated to empowering women,
+                uplifting the girl child, and building resilient communities.
+              </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+              <h4 class="footer-heading">Quick Links</h4>
+              <ul class="footer-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./programs&initiatives.html">Programs</a></li>
+                <li><a href="./get-involved.html">Get Involved</a></li>
+                <li><a href="./leadership.html">Leadership</a></li>
+                <li><a href="./gallery.html">Gallery</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+              </ul>
+            </div>
+
+            <!-- Initiatives -->
+            <div class="footer-section">
+              <h4 class="footer-heading">Be A Member</h4>
+              <ul class="footer-links">
+                <li><a href="./contact.html">Join Us</a></li>
+                <li><a href="#">Support the Girl Child</a></li>
+                <li><a href="#">Partner With Us</a></li>
+              </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-section">
+              <h4 class="footer-heading">Contact Us</h4>
+              <ul class="footer-contact">
+                <li>
+                  <svg
+                    class="contact-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>4 Hampshire Drive Eastlea, Harare</span>
+                </li>
+                <li>
+                  <svg
+                    class="contact-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    ></path>
+                  </svg>
+                  <span>
+                    <pre>+971 55 341 5162</pre>
+                    <pre>+971 55 472 3048</pre>
+                  </span>
+                </li>
+                <li>
+                  <svg
+                    class="contact-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <span>info@empoweredwomenrising.org</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="container footer-bottom-content">
+            <p class="copyright">
+              © 2026 Empowered Women Rising Trust Association. All Rights
+              Reserved.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="social-link" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  ></path>
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                  ></path>
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Instagram">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </body>
+  </html>
+</V>

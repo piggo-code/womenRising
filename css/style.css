@@ -1,0 +1,861 @@
+/* ===== GLOBAL RESET & VARIABLES ===== */
+:root {
+  --deep-purple: #2E0F3A;
+  --rich-purple: #5B2A86;
+  --gold: #D4AF37;
+  --soft-gold: #F1E5AC;
+  --off-white: #F8F5F2;
+  --text-dark: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-dark);
+  background-color: var(--off-white);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden; /* Containing floats if needed, but mostly using flex now */
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+header {
+  background: #F8F5F2;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(91, 42, 134, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 80px; /* Adjusted for better header fit */
+  height: auto;
+}
+
+#branding h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  color: var(--rich-purple);
+  margin: 0;
+  font-weight: 700;
+}
+
+.highlight {
+  color: var(--gold);
+}
+
+/* NAVIGATION */
+nav ul {
+  display: flex;
+  gap: 5px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+nav li.current a {
+  color: var(--rich-purple);
+  font-weight: 700;
+}
+
+nav a:hover {
+  color: var(--rich-purple);
+  background-color: rgba(91, 42, 134, 0.05);
+}
+
+/* HAMBURGER MENU (Hidden on Desktop) */
+.menu-icon,
+.nav-toggle {
+  display: none;
+}
+
+/* ===== SHOWCASE HERO SECTION ===== */
+#showcase {
+  position: relative;
+  min-height: 80vh; /* Flexible height */
+  background: 
+    linear-gradient(
+      rgba(46, 15, 58, 0.88),
+      rgba(46, 15, 58, 0.88)
+    ),
+    url('../img/ewrta.png') no-repeat center center/cover;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #F8F5F2;
+  padding: 60px 20px;
+  border-bottom: 4px solid var(--gold);
+}
+
+#showcase h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem; /* 48px */
+  color: var(--gold);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+#showcase p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.2rem;
+  color: var(--soft-gold);
+}
+
+/* ===== CTA BUTTONS SECTION ===== */
+#cta-buttons {
+  background-color: var(--off-white);
+  padding: 60px 20px;
+  text-align: center;
+  border-bottom: 4px solid var(--gold);
+}
+
+.section-title {
+  color: var(--gold);
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 34px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  font-family: 'Nunito Sans', sans-serif;
+  display: inline-block;
+}
+
+.btn-purple {
+  background-color: var(--rich-purple);
+  color: var(--off-white);
+  border: 2px solid transparent;
+}
+
+.btn-purple:hover {
+  background-color: transparent;
+  border-color: var(--gold);
+  color: var(--gold);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+/* ===== WHO WE ARE SECTION ===== */
+#whoweare, #why-we-exist {
+  background: var(--deep-purple);
+  color: var(--off-white);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#whoweare h3, #why-we-exist h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Gold underline effect */
+#whoweare h3::after, #why-we-exist h3::after {
+  content: "";
+  width: 70px;
+  height: 3px;
+  background: var(--gold);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+#whoweare p, #why-we-exist p {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  font-size: 1.05rem;
+  color: var(--soft-gold);
+}
+
+/* ===== FOCUS AREAS SECTION ===== */
+.focus-section {
+  background-color: #F8F5F2;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Header Styling */
+.section-header {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  color: var(--deep-purple);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.section-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  display: block;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grid Layout */
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* Card Styling */
+.focus-card {
+  background: white;
+  padding: 40px 25px;
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Smooth curve */
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hover Effects */
+.focus-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(91, 42, 134, 0.12);
+  border-color: var(--gold);
+}
+
+/* Gold accent line that slides in on top */
+.focus-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.focus-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Icon Container (The Circle) */
+.focus-card__icon-box {
+  width: 80px;
+  height: 80px;
+  background: rgba(91, 42, 134, 0.05); /* Light purple bg */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  transition: all 0.4s ease;
+}
+
+.focus-card:hover .focus-card__icon-box {
+  background: var(--rich-purple); /* Background turns purple */
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* The SVG Icon itself */
+.focus-card__icon {
+  width: 36px;
+  height: 36px;
+  stroke: var(--rich-purple);
+  transition: all 0.4s ease;
+}
+
+.focus-card:hover .focus-card__icon {
+  stroke: white; /* Icon turns white */
+}
+
+/* Typography */
+.focus-card__title {
+  font-size: 1.2rem;
+  color: var(--deep-purple);
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 15px;
+}
+
+.focus-card__text {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .focus-card {
+    padding: 30px 20px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE MOBILE STYLES (Max 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  
+  /* Header & Nav Mobile */
+  header .container {
+    flex-wrap: wrap;
+  }
+
+  .header-left {
+    z-index: 10;
+  }
+
+  /* Hamburger Icon Styling */
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+  }
+
+  .menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--rich-purple);
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+  }
+
+  /* Hide Nav by default */
+  nav {
+    display: none;
+    width: 100%;
+    order: 3; /* Pushes it below branding */
+    padding-top: 20px;
+  }
+
+  /* Toggle Nav Open State */
+  .nav-toggle:checked ~ nav {
+    display: block;
+  }
+
+  /* Animate Hamburger to X */
+  .nav-toggle:checked ~ .menu-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .nav-toggle:checked ~ .menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle:checked ~ .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  nav a {
+    display: block;
+    padding: 15px;
+    border-bottom: 1px solid rgba(91, 42, 134, 0.1);
+  }
+
+  /* Hero Mobile */
+  #showcase {
+    min-height: 70vh;
+    padding: 40px 20px;
+  }
+
+  #showcase h1 {
+    font-size: 2rem; /* Smaller on mobile */
+  }
+
+  #showcase p {
+    font-size: 1rem; /* Smaller on mobile */
+  }
+
+  /* Sections Mobile */
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  #whoweare h3, #boxes h3, #why-we-exist h3 {
+    font-size: 1.6rem;
+  }
+
+  /* Buttons Mobile */
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+}
+
+/* ===== FOOTER SECTION ===== */
+
+.divider {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 0;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: var(--deep-purple);
+}
+
+.site-footer {
+  background-color: var(--off-white);
+  color: var(--soft-gold);
+  border-top: 2px solid var(--gold);
+  /* Override the simple centering from previous CSS */
+  padding: 0; 
+  text-align: left;
+}
+
+.footer-top {
+  padding: 60px 0 40px;
+  position: relative;
+}
+
+/* Subtle pattern overlay for texture */
+.footer-top::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(circle at 25% 10%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* 4-Column Grid Layout */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer Branding Section */
+.footer-branding {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  color: var(--deep-purple);
+}
+
+.footer-logo {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+.footer-branding h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--rich-purple);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.emp {
+  color: var(--gold);
+}
+
+#footer-description {
+  color: var(--rich-purple);
+}
+
+.footer-description {
+  color: var(--deep-purple);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Footer Section Headings */
+.footer-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--deep-purple);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Gold underline effect for headings */
+.footer-heading::after {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background: var(--deep-purple);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Quick Links & Initiatives Lists */
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: var(--deep-purple);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+/* Animated underline on hover */
+.footer-links a::before {
+  content: "";
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: var(--deep-purple);
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--rich-purple);
+  transform: translateX(5px);
+}
+
+.footer-links a:hover::before {
+  width: 100%;
+}
+
+/* Contact Section */
+.footer-contact {
+  list-style: none;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: var(--rich-purple);
+  font-size: 0.95rem;
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  stroke: var(--gold);
+  margin-top: 2px; /* Align with text */
+}
+
+/* Footer Bottom Bar (Copyright & Social) */
+.footer-bottom {
+  background-color: var(--deep-purple);
+  padding: 20px 0;
+  margin-top: 20px;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.copyright {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--soft-gold);
+}
+
+/* Social Media Icons */
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  transition: all 0.3s ease;
+}
+
+.social-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.social-link:hover {
+  background-color: var(--gold);
+  color: var(--deep-purple);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+}
+
+/* =========================================
+   ADDITIONS FOR RESPONSIVE MEDIA QUERY
+   ========================================= */
+/* Add these rules inside your @media (max-width: 768px) block */
+
+@media (max-width: 768px) {
+  /* ... your existing mobile styles ... */
+
+  /* Footer Mobile Layout */
+  .footer-grid {
+    grid-template-columns: 1fr; /* Stack columns */
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-top {
+    padding: 40px 0 20px;
+  }
+
+  /* Center elements on mobile */
+  .footer-branding {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-heading::after {
+    left: 50%;
+    transform: translateX(-50%); /* Center the underline */
+  }
+
+  .footer-links a:hover {
+    transform: none; /* Remove slide effect on mobile */
+  }
+
+  .footer-contact li {
+    justify-content: center;
+    text-align: left; /* Keep text readable next to icon */
+  }
+  
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: var(--soft-gold);
+}
+
+/* ===== ABOUT PAGE STYLES ===== */
+.about-section {
+  background-color: var(--off-white);
+  padding: 80px 20px;
+}
+
+.about-section .container {
+  max-width: 900px; /* Keeps text lines readable */
+  margin: 0 auto;
+}
+
+/* Main Title */
+.about-section h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  color: var(--deep-purple);
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+/* Gold underline for main title */
+.about-section h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--gold);
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* Subtitles (Our Story) */
+.about-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  color: var(--rich-purple);
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(91, 42, 134, 0.1);
+}
+
+/* Sub-sections (Vision, Mission, Values) */
+.about-section h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  color: var(--gold); /* Gold color for emphasis */
+  margin-top: 35px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+/* Paragraph Text */
+.about-section p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--deep-purple);
+  margin-bottom: 20px;
+  text-align: justify; /* Makes text blocks look cleaner */
+}
+
+/* Values List Styling */
+.about-section ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.about-section li {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--gold);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  font-weight: 600;
+  color: var(--deep-purple);
+  transition: transform 0.3s ease;
+}
+
+.about-section li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(91, 42, 134, 0.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 50px 15px;
+  }
+  
+  .about-section h1 {
+    font-size: 2rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-section ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+

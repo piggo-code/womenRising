@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      EWRTA | Get Involved
+    </title>
+    <meta
+      name="description"
+      content="Join EWRTA in empowering women and protecting girls. Volunteer, partner, or support our mission to create lasting positive change in communities."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <style>
+      /* ============================================
+         MODERN UX/UI DESIGN SYSTEM
+         Mobile-First Responsive Architecture
+         ============================================ */
+
+      /* CSS Custom Properties - Design Tokens */
+      :root {
+        /* Brand Colors */
+        --deep-purple: #2e0f3a;
+        --rich-purple: #5b2a86;
+        --gold: #d4af37;
+        --soft-gold: #f1e5ac;
+        --off-white: #f8f5f2;
+        --text-dark: #333333;
+
+        /* Extended Palette for UX Enhancement */
+        --white: #ffffff;
+        --light-gray: #f5f5f5;
+        --medium-gray: #666666;
+        --border-light: rgba(212, 175, 55, 0.2);
+        --shadow-light: rgba(46, 15, 58, 0.08);
+        --shadow-medium: rgba(46, 15, 58, 0.15);
+
+        /* Typography Scale */
+        --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        --font-weight-normal: 400;
+        --font-weight-medium: 500;
+        --font-weight-semibold: 600;
+        --font-weight-bold: 700;
+
+        /* Spacing Scale */
+        --space-xs: 0.5rem; /* 8px */
+        --space-sm: 1rem; /* 16px */
+        --space-md: 1.5rem; /* 24px */
+        --space-lg: 2rem; /* 32px */
+        --space-xl: 3rem; /* 48px */
+        --space-2xl: 4rem; /* 64px */
+        --space-3xl: 6rem; /* 96px */
+
+        /* Design System */
+        --border-radius: 12px;
+        --border-radius-lg: 20px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --container-max: 1200px;
+        --container-padding: var(--space-sm);
+      }
+
+      /* Reset & Base Styles */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--text-dark);
+        background-color: var(--off-white);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Hero Section */
+.hero {
+  background: 
+    linear-gradient(135deg, rgba(46, 15, 58, 0.8) 0%, rgba(91, 42, 134, 0.8) 100%),
+    url('./img/Diverse_group_engaged_in_activity_acfd5d17eb.jpeg') center center/cover no-repeat;
+  color: var(--white);
+  padding: var(--space-3xl) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="rgba(212,175,55,0.1)"/><circle cx="75" cy="25" r="0.3" fill="rgba(212,175,55,0.05)"/><circle cx="50" cy="75" r="0.4" fill="rgba(212,175,55,0.08)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-md);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: var(--space-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+      /* Main Content Grid */
+      .main-content {
+        padding: var(--space-3xl) 0;
+      }
+
+      .involvement-grid {
+        display: grid;
+        gap: var(--space-xl);
+        margin-bottom: var(--space-3xl);
+      }
+
+      /* Enhanced Cards Design */
+      .involvement-card {
+        background: var(--white);
+        border-radius: var(--border-radius-lg);
+        padding: var(--space-xl);
+        box-shadow: 0 4px 24px var(--shadow-light);
+        border: 1px solid var(--border-light);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .involvement-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--gold) 0%,
+          var(--soft-gold) 100%
+        );
+      }
+
+      .involvement-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px var(--shadow-medium);
+        border-color: var(--gold);
+      }
+
+      .card-icon {
+        width: 64px;
+        height: 64px;
+        background: linear-gradient(
+          135deg,
+          var(--rich-purple),
+          var(--deep-purple)
+        );
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: var(--space-md);
+        color: var(--white);
+        font-size: 1.5rem;
+      }
+
+      .involvement-card h3 {
+        font-size: 1.5rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--deep-purple);
+        margin-bottom: var(--space-sm);
+        line-height: 1.3;
+      }
+
+      .involvement-card p {
+        color: var(--medium-gray);
+        margin-bottom: var(--space-lg);
+        font-size: 1.1rem;
+      }
+
+      /* CTA Buttons */
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-xs);
+        background: var(--deep-purple);
+        color: var(--white);
+        text-decoration: none;
+        padding: 14px 28px;
+        border-radius: var(--border-radius);
+        font-weight: var(--font-weight-semibold);
+        transition: var(--transition);
+        border: 2px solid var(--deep-purple);
+      }
+
+      .cta-button:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--deep-purple);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+      }
+
+      .cta-button:focus {
+        outline: 3px solid rgba(212, 175, 55, 0.4);
+        outline-offset: 2px;
+      }
+
+      .hero-cta {
+        background: var(--gold);
+        color: var(--deep-purple);
+        border-color: var(--gold);
+        font-size: 1.1rem;
+        padding: 16px 32px;
+      }
+
+      .hero-cta:hover {
+        background: var(--soft-gold);
+        border-color: var(--soft-gold);
+      }
+
+
+      /* Responsive Design */
+      @media (min-width: 768px) {
+        :root {
+          --container-padding: var(--space-md);
+        }
+
+        .nav-links {
+          display: flex;
+        }
+
+        .involvement-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero {
+          padding: var(--space-3xl) 0 var(--space-2xl);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .involvement-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: var(--space-2xl);
+        }
+
+        .involvement-card {
+          padding: var(--space-2xl);
+        }
+      }
+
+      /* Accessibility Enhancements */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      /* Focus styles for keyboard navigation */
+      .involvement-card:focus-within {
+        outline: 3px solid var(--gold);
+        outline-offset: 2px;
+      }
+
+      /* Loading states and performance optimizations */
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Utility Classes */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Enhanced Header with Navigation -->
+
+    <header>
+      <div class="container">
+        <div class="header-left">
+          <img class="logo" src="./img/ewrta.png" alt="EWRTA Logo" />
+          <div id="branding">
+            <h1><span class="highlight">Empowered Women</span></h1>
+            <h1>Rising Trust Association</h1>
+          </div>
+        </div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="menu-icon" aria-label="Toggle Menu">
+          <span></span><span></span><span></span>
+        </label>
+        <nav>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./programs&initiatives.html">Programs</a></li>
+            <li class="current"><a href="./get-involved.html">Get Involved</a></li>
+            <li><a href="./leadership.html">Leadership</a></li>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Get Involved with Empowered Women Rising Trust Association</h1>
+          <p class="hero-subtitle">
+            Join our mission to empower women, protect girls, and create lasting
+            positive change in communities worldwide.
+          </p>
+          <a href="#involvement" class="cta-button hero-cta">
+            Start Your Journey
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <section id="involvement" class="involvement-grid">
+          <!-- Join the Association Card -->
+          <article class="involvement-card">
+            <div class="card-icon" aria-hidden="true">👥</div>
+            <h3>Join the Association</h3>
+            <p>
+              Become a part of a growing community of women committed to
+              empowerment, collaboration, and positive change.
+            </p>
+            <a href="#join" class="cta-button">
+              Become a Member
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- Volunteer Card -->
+          <article class="involvement-card">
+            <div class="card-icon" aria-hidden="true">🤝</div>
+            <h3>Volunteer With Us</h3>
+            <p>
+              Use your skills, time, and passion to support our programs and
+              outreach initiatives.
+            </p>
+            <a href="#volunteer" class="cta-button">
+              Start Volunteering
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- Partnership Card -->
+          <article class="involvement-card">
+            <div class="card-icon" aria-hidden="true">🤝</div>
+            <h3>Partner With Us</h3>
+            <p>
+              We welcome partnerships with individuals, organizations, and
+              institutions that share our vision of empowering women and
+              protecting the girl child.
+            </p>
+            <a href="#partner" class="cta-button">
+              Explore Partnership
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- Support Card -->
+          <article class="involvement-card">
+            <div class="card-icon" aria-hidden="true">💝</div>
+            <h3>Support Our Work</h3>
+            <p>
+              Your support helps us reach more women and girls through
+              mentorship, donations, and empowerment programs.
+            </p>
+            <a href="#support" class="cta-button">
+              Make a Donation
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <!-- Enhanced Footer -->
+    <hr class="divider" />
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="container footer-grid">
+          <!-- About Section -->
+          <div class="footer-section footer-about">
+            <div class="footer-branding">
+              <img class="footer-logo" src="./img/ewrta.png" alt="EWRTA Logo" />
+              <h3>
+                <span class="emp">Empowered Women</span> Rising Trust
+                Association
+              </h3>
+            </div>
+            <p id="footer-description">
+              A women-led organization dedicated to empowering women, uplifting
+              the girl child, and building resilient communities.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="./programs&initiatives.html">Programs</a></li>
+              <li><a href="./get-involved.html">Get Involved</a></li>
+              <li><a href="./leadership.html">Leadership</a></li>
+              <li><a href="./gallery.html">Gallery</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Initiatives -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Be A Member</h4>
+            <ul class="footer-links">
+              <li><a href="./contact.html">Join Us</a></li>
+              <li><a href="#">Support the Girl Child</a></li>
+              <li><a href="#">Partner With Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Contact Us</h4>
+            <ul class="footer-contact">
+              <li>
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>
+                  4 Hampshire Drive Eastlea, Harare
+                </span>
+              </li>
+              <li>
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  ></path>
+                </svg>
+                <span><pre>+971 55 341 5162</pre>
+                  <pre>+971 55 472 3048</pre></span>
+              </li>
+              <li>
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>info@empoweredwomenrising.org</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-content">
+          <p class="copyright">
+            © 2026 Empowered Women Rising Trust Association. All Rights
+            Reserved.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                ></path>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+  </body>
+</html>

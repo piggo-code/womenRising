@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A professional portfolio gallery showcasing creative work in a modern masonry grid layout."
+    />
+    <title>EWRTA | Gallery</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* --- 1. Variables & Reset --- */
+      :root {
+        --deep-purple: #2e0f3a;
+        --rich-purple: #5b2a86;
+        --gold: #d4af37;
+        --soft-gold: #f1e5ac;
+        --off-white: #f8f5f2;
+        --text-dark: #333333;
+        --white: #ffffff;
+
+        --gap: 24px;
+        --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 400;
+        background-color: var(--off-white);
+        color: var(--text-dark);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      /* --- 2. Typography & Utilities --- */
+      h1,
+      h2,
+      h3 {
+        font-family: "Nunito Sans", sans-serif;
+        line-height: 1.2;
+        color: var(--deep-purple);
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* --- 3. Hero Section --- */
+      .hero {
+        background-color: var(--deep-purple);
+        color: var(--white);
+        padding: 5rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Subtle gradient overlay for depth */
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          circle at 50% 0%,
+          rgba(91, 42, 134, 0.4) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 700;
+        color: var(--off-white);
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+      }
+
+      .hero p {
+        font-family: "Nunito Sans", sans-serif;
+        font-style: italic;
+        font-size: 1.5rem;
+        color: var(--soft-gold);
+        margin-bottom: 2rem;
+      }
+
+      .divider {
+        width: 80px;
+        height: 3px;
+        background-color: var(--gold);
+        margin: 0 auto;
+        border-radius: 2px;
+      }
+
+      /* --- 4. Masonry Grid Layout --- */
+      .gallery-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+      }
+
+      /* CSS Columns Masonry Technique */
+      .masonry-grid {
+        column-count: 4;
+        column-gap: var(--gap);
+      }
+
+      /* Responsive Breakpoints */
+      @media (max-width: 1200px) {
+        .masonry-grid {
+          column-count: 3;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .masonry-grid {
+          column-count: 2;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .masonry-grid {
+          column-count: 1;
+        }
+        .hero {
+          padding: 3rem 1rem;
+        }
+      }
+
+      /* --- 5. Gallery Items (Cards) --- */
+      .gallery-item {
+        break-inside: avoid; /* Prevents image from being split across columns */
+        margin-bottom: var(--gap);
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--white);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        cursor: pointer;
+        transition: var(--transition-smooth);
+      }
+
+      /* Hover Effects on Container */
+      .gallery-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15),
+          0 10px 10px -5px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Image Styling */
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.07);
+      }
+
+      /* Overlay Styling */
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(46, 15, 58, 0.9) 0%,
+          transparent 60%
+        );
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.5rem;
+        transition: opacity 0.4s ease;
+      }
+
+      .gallery-item:hover .overlay,
+      .gallery-item:focus-within .overlay {
+        opacity: 1;
+      }
+
+      .overlay h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.5rem;
+        color: var(--white);
+        transform: translateY(20px);
+        transition: transform 0.4s ease 0.05s;
+      }
+
+      .overlay span {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--gold);
+        font-weight: 600;
+        transform: translateY(20px);
+        transition: transform 0.4s ease 0.1s;
+      }
+
+      .gallery-item:hover .overlay h3,
+      .gallery-item:hover .overlay span {
+        transform: translateY(0);
+      }
+
+      /* Accessibility: Focus State */
+      .gallery-item a:focus {
+        outline: 3px solid var(--gold);
+        outline-offset: 4px;
+      }
+
+      /* --- 6. Lightbox (Pure CSS) --- */
+      /* The lightbox is hidden by default, shown when :target is activated */
+      .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(46, 15, 58, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+      }
+
+      /* Active State when ID is targeted */
+      .lightbox:target {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Lightbox Content */
+      .lightbox-content {
+        position: relative;
+        max-width: 90vw;
+        max-height: 85vh;
+        animation: scaleIn 0.4s ease forwards;
+      }
+
+      @keyframes scaleIn {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .lightbox-content img {
+        max-height: 85vh;
+        border-radius: 8px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+
+      .lightbox-caption {
+        text-align: center;
+        margin-top: 1rem;
+        color: var(--off-white);
+      }
+
+      .lightbox-caption h3 {
+        color: var(--white);
+        font-size: 1.5rem;
+      }
+
+      .lightbox-caption span {
+        color: var(--gold);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      /* Lightbox Controls */
+      .btn-close,
+      .btn-nav {
+        position: absolute;
+        background: var(--gold);
+        color: var(--deep-purple);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+        transition: transform 0.3s ease, background 0.3s ease;
+        z-index: 1001;
+      }
+
+      .btn-close {
+        top: 20px;
+        right: 20px;
+      }
+
+      .btn-close:hover,
+      .btn-nav:hover {
+        background: var(--white);
+        transform: scale(1.1);
+      }
+
+      /* Navigation Buttons */
+      .btn-prev {
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .btn-next {
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      /* Fix hover transform for nav buttons */
+      .btn-prev:hover {
+        transform: translateY(-50%) scale(1.1);
+      }
+      .btn-next:hover {
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      /* Counter Badge */
+      .counter {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        color: var(--soft-gold);
+        font-size: 0.9rem;
+        font-weight: 600;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 5px 12px;
+        border-radius: 20px;
+      }
+
+      /* Semantic SEO Hidden Titles for Lightboxes (Screen Readers) */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+
+      .donations{
+        text-align: center;
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-left">
+          <img class="logo" src="./img/ewrta.png" alt="EWRTA Logo" />
+          <div id="branding">
+            <h1><span class="highlight">Empowered Women</span></h1>
+            <h1>Rising Trust Association</h1>
+          </div>
+        </div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="menu-icon" aria-label="Toggle Menu">
+          <span></span><span></span><span></span>
+        </label>
+        <nav>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./programs&initiatives.html">Programs</a></li>
+            <li><a href="./get-involved.html">Get Involved</a></li>
+            <li><a href="./leadership.html">Leadership</a></li>
+            <li class="current"><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Empowering Women. Transforming Communities.</h1>
+        <p>
+          Women Empowerment Rising Trust Association is dedicated to advancing
+          women’s economic empowerment, fostering mentorship and networking,
+          supporting the girl child, uplifting young mothers, and leading
+          impactful community outreach initiatives that restore dignity and
+          create sustainable futures.
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Gallery -->
+    <main class="gallery-container">
+      <div class="masonry-grid">
+        <!-- Item 1 -->
+        <figure class="gallery-item">
+          <a href="#img1">
+            <!-- Using placeholder images with varied heights to demonstrate masonry -->
+            <img
+              src="./img/g1.jpeg"
+              alt="Modern Architecture"
+              loading="lazy"
+            />
+            <div class="overlay">
+              <h3>Women Economic Empowerment</h3>
+              <span>Abstract</span>
+            </div>
+          </a>
+        </figure>
+
+        <!-- Item 2 (Taller) -->
+        <figure class="gallery-item">
+          <a href="#img2">
+            <img src="./img/g17.jpeg" alt="Forest Path" loading="lazy" />
+            <div class="overlay">
+              <h3>Networking & Mentorship</h3>
+              <span>Education sponsorship & empowerment programs</span>
+            </div>
+          </a>
+        </figure>
+
+        <!-- Item 3 -->
+        <figure class="gallery-item">
+          <a href="#img3">
+            <img src="./img/g14.jpeg" alt="Portrait Study" loading="lazy" />
+            <div class="overlay">
+              <h3>Networking & Mentorship</h3>
+              <span>Building leadership and professional growth</span>
+            </div>
+          </a>
+        </figure>
+
+        <!-- Item 4 -->
+        <figure class="gallery-item">
+          <a href="#img4">
+            <img src="./img/g13.jpeg" alt="Abstract Art" loading="lazy" />
+            <div class="overlay">
+              <h3>Women Economic Empowerment</h3>
+              <span>Guidance, resources & livelihood assistance</span>
+            </div>
+          </a>
+        </figure>
+
+        <!-- Item 5 -->
+        <figure class="gallery-item">
+          <a href="#img5">
+            <img src="./img/g3.jpeg" alt="City Skyline" loading="lazy" />
+            <div class="overlay">
+              <h3>Women Economic Empowerment</h3>
+              <span
+                >Entrepreneurship, financial literacy & skills development</span
+              >
+            </div>
+          </a>
+        </figure>
+
+        <!-- Item 6 (Tall) -->
+        <figure class="gallery-item">
+          <a href="#img6">
+            <img src="./img/g5.jpeg" alt="Ocean Waves" loading="lazy" />
+            <div class="overlay">
+              <h3>Networking & Mentorship</h3>
+              <span>Education sponsorship & empowerment programs</span>
+            </div>
+          </a>
+        </figure>
+
+        <!-- Item 7 -->
+        <figure class="gallery-item">
+          <a href="#img7">
+            <img src="./img/g12.jpeg" alt="Glass Building" loading="lazy" />
+            <div class="overlay">
+              <h3>Networking & Mentorship</h3>
+              <span>Building leadership and professional growth</span>
+            </div>
+          </a>
+        </figure>
+
+        <!-- Item 8 -->
+        <figure class="gallery-item">
+          <a href="#img8">
+            <img src="./img/g6.jpeg" alt="Studio Portrait" loading="lazy" />
+            <div class="overlay">
+              <h3>Women Economic Empowerment</h3>
+              <span
+                >Entrepreneurship, financial literacy & skills development</span
+              >
+            </div>
+          </a>
+        </figure>
+
+        <!-- Item 9 -->
+        <figure class="gallery-item">
+          <a href="#img9">
+            <img src="./img/g2.jpeg" alt="Mountain Lake" loading="lazy" />
+            <div class="overlay">
+              <h3>Networking & Mentorship</h3>
+              <span>Portrait</span>
+            </div>
+          </a>
+        </figure>
+
+        
+      </div>
+    </main>
+
+    <!-- Lightbox Modals (Pure CSS Implementation) -->
+    <!-- Logic: Each ID is a separate modal 'screen'. Navigating links changes the URL hash, triggering different :target states. -->
+
+    <!-- Lightbox 1 -->
+    <div class="lightbox" id="img1">
+      <span class="counter">1 / 12</span>
+      <a href="#" class="btn-close" aria-label="Close Lightbox">&times;</a>
+      <div class="lightbox-content">
+        <img src="./img/g1.jpeg" alt="Modern Architecture" />
+        <div class="lightbox-caption">
+          <h3>Women Economic Empowerment</h3>
+          <span></span>
+        </div>
+      </div>
+      <!-- Nav Logic: Prev goes to last item, Next goes to img2 -->
+      <a href="#img12" class="btn-nav btn-prev" aria-label="Previous Image"
+        >&#10094;</a
+      >
+      <a href="#img2" class="btn-nav btn-next" aria-label="Next Image"
+        >&#10095;</a
+      >
+    </div>
+
+    <!-- Lightbox 2 -->
+    <div class="lightbox" id="img2">
+      <span class="counter">2 / 12</span>
+      <a href="#" class="btn-close" aria-label="Close Lightbox">&times;</a>
+      <div class="lightbox-content">
+        <img src="./img/g17.jpeg" alt="Forest Path" />
+        <div class="lightbox-caption">
+          <h3>Networking & Mentorship</h3>
+          <span></span>
+        </div>
+      </div>
+      <a href="#img1" class="btn-nav btn-prev" aria-label="Previous Image"
+        >&#10094;</a
+      >
+      <a href="#img3" class="btn-nav btn-next" aria-label="Next Image"
+        >&#10095;</a
+      >
+    </div>
+
+    <!-- Lightbox 3 -->
+    <div class="lightbox" id="img3">
+      <span class="counter">3 / 12</span>
+      <a href="#" class="btn-close" aria-label="Close Lightbox">&times;</a>
+      <div class="lightbox-content">
+        <img src="./img/g14.jpeg" alt="Portrait Study" />
+        <div class="lightbox-caption">
+          <h3>Networking & Mentorship</h3>
+          <span></span>
+        </div>
+      </div>
+      <a href="#img2" class="btn-nav btn-prev" aria-label="Previous Image"
+        >&#10094;</a
+      >
+      <a href="#img4" class="btn-nav btn-next" aria-label="Next Image"
+        >&#10095;</a
+      >
+    </div>
+
+    <!-- Lightbox 4 -->
+    <div class="lightbox" id="img4">
+      <span class="counter">4 / 12</span>
+      <a href="#" class="btn-close" aria-label="Close Lightbox">&times;</a>
+      <div class="lightbox-content">
+        <img src="./img/g13.jpeg" alt="Abstract Art" />
+        <div class="lightbox-caption">
+          <h3>Women Economic Empowerment</h3>
+          <span>Abstract</span>
+        </div>
+      </div>
+      <a href="#img3" class="btn-nav btn-prev" aria-label="Previous Image"
+        >&#10094;</a
+      >
+      <a href="#img5" class="btn-nav btn-next" aria-label="Next Image"
+        >&#10095;</a
+      >
+    </div>
+
+    <!-- Lightbox 5 -->
+    <div class="lightbox" id="img5">
+      <span class="counter">5 / 12</span>
+      <a href="#" class="btn-close" aria-label="Close Lightbox">&times;</a>
+      <div class="lightbox-content">
+        <img src="./img/g3.jpeg" alt="City Skyline" />
+        <div class="lightbox-caption">
+          <h3>Women Economic Empowerment</h3>
+          <span></span>
+        </div>
+      </div>
+      <a href="#img4" class="btn-nav btn-prev" aria-label="Previous Image"
+        >&#10094;</a
+      >
+      <a href="#img6" class="btn-nav btn-next" aria-label="Next Image"
+        >&#10095;</a
+      >
+    </div>
+
+    <!-- Lightbox 6 -->
+    <div class="lightbox" id="img6">
+      <span class="counter">6 / 12</span>
+      <a href="#" class="btn-close" aria-label="Close Lightbox">&times;</a>
+      <div class="lightbox-content">
+        <img src="./img/g5.jpeg" alt="Ocean Waves" />
+        <div class="lightbox-caption">
+          <h3>Networking & Mentorship</h3>
+          <span></span>
+        </div>
+      </div>
+      <a href="#img5" class="btn-nav btn-prev" aria-label="Previous Image"
+        >&#10094;</a
+      >
+      <a href="#img7" class="btn-nav btn-next" aria-label="Next Image"
+        >&#10095;</a
+      >
+    </div>
+
+    <!-- Lightbox 7 -->
+    <div class="lightbox" id="img7">
+      <span class="counter">7 / 12</span>
+      <a href="#" class="btn-close" aria-label="Close Lightbox">&times;</a>
+      <div class="lightbox-content">
+        <img src="./img/g12.jpeg" alt="Glass Building" />
+        <div class="lightbox-caption">
+          <h3>Networking & Mentorship</h3>
+          <span></span>
+        </div>
+      </div>
+      <a href="#img6" class="btn-nav btn-prev" aria-label="Previous Image"
+        >&#10094;</a
+      >
+      <a href="#img8" class="btn-nav btn-next" aria-label="Next Image"
+        >&#10095;</a
+      >
+    </div>
+
+    <!-- Lightbox 8 -->
+    <div class="lightbox" id="img8">
+      <span class="counter">8 / 12</span>
+      <a href="#" class="btn-close" aria-label="Close Lightbox">&times;</a>
+      <div class="lightbox-content">
+        <img src="./img/g6.jpeg" alt="Studio Portrait" />
+        <div class="lightbox-caption">
+          <h3>Women Economic Empowerment</h3>
+          <span></span>
+        </div>
+      </div>
+      <a href="#img7" class="btn-nav btn-prev" aria-label="Previous Image"
+        >&#10094;</a
+      >
+      <a href="#img9" class="btn-nav btn-next" aria-label="Next Image"
+        >&#10095;</a
+      >
+    </div>
+
+    <!-- Lightbox 9 -->
+    <div class="lightbox" id="img9">
+      <span class="counter">9 / 12</span>
+      <a href="#" class="btn-close" aria-label="Close Lightbox">&times;</a>
+      <div class="lightbox-content">
+        <img src="./img/g2.jpeg" alt="Mountain Lake" />
+        <div class="lightbox-caption">
+          <h3>Networking & Mentorship</h3>
+          <span></span>
+        </div>
+      </div>
+      <a href="#img8" class="btn-nav btn-prev" aria-label="Previous Image"
+        >&#10094;</a
+      >
+      <a href="#img10" class="btn-nav btn-next" aria-label="Next Image"
+        >&#10095;</a
+      >
+    </div>
+
+    <!-- Lightbox 10 -->
+    <div class="lightbox" id="img10">
+      <span class="counter">10 / 12</span>
+      <a href="#" class="btn-close" aria-label="Close Lightbox">&times;</a>
+      <div class="lightbox-content">
+        <img src="./img/g7.jpeg" alt="Geometric Shapes" />
+        <div class="lightbox-caption">
+          <h3>Community Outreach & Donations</h3>
+          <span></span>
+        </div>
+      </div>
+      <a href="#img9" class="btn-nav btn-prev" aria-label="Previous Image"
+        >&#10094;</a
+      >
+      <a href="#img11" class="btn-nav btn-next" aria-label="Next Image"
+        >&#10095;</a
+      >
+    </div>
+
+    <!-- Lightbox 11 -->
+    <div class="lightbox" id="img11">
+      <span class="counter">11 / 12</span>
+      <a href="#" class="btn-close" aria-label="Close Lightbox">&times;</a>
+      <div class="lightbox-content">
+        <img src="./img/g16.jpeg" alt="Street Photography" />
+        <div class="lightbox-caption">
+          <h3>Community Outreach & Donations</h3>
+          <span></span>
+        </div>
+      </div>
+      <a href="#img10" class="btn-nav btn-prev" aria-label="Previous Image"
+        >&#10094;</a
+      >
+      <a href="#img12" class="btn-nav btn-next" aria-label="Next Image"
+        >&#10095;</a
+      >
+    </div>
+
+    <!-- Lightbox 12 -->
+    <div class="lightbox" id="img12">
+      <span class="counter">12 / 12</span>
+      <a href="#" class="btn-close" aria-label="Close Lightbox">&times;</a>
+      <div class="lightbox-content">
+        <img src="./img/g8.jpeg" alt="Museum Interior" />
+        <div class="lightbox-caption">
+          <h3>Girl Child Support</h3>
+          <span></span>
+        </div>
+      </div>
+      <a href="#img11" class="btn-nav btn-prev" aria-label="Previous Image"
+        >&#10094;</a
+      >
+      <!-- Next loops back to 1 -->
+      <a href="#img1" class="btn-nav btn-next" aria-label="Next Image"
+        >&#10095;</a
+      >
+    </div>
+
+    <div class="donations">
+      <h1>Donations</h1>
+    </div>
+
+    <main class="gallery-container">
+      <div class="masonry-grid">
+        <!-- Item 10 -->
+        <figure class="gallery-item">
+          <a href="#img10">
+            <img src="./img/g7.jpeg" alt="Geometric Shapes" loading="lazy" />
+            <div class="overlay">
+              <h3>Community Outreach & Donations</h3>
+              <span>Abstract</span>
+            </div>
+          </a>
+        </figure>
+
+        <!-- Item 11 -->
+        <figure class="gallery-item">
+          <a href="#img11">
+            <img
+              src="./img/g16.jpeg"
+              alt="Street Photography"
+              loading="lazy"
+            />
+            <div class="overlay">
+              <h3>Community Outreach & Donations</h3>
+              <span>Community impact initiatives & charitable support</span>
+            </div>
+          </a>
+        </figure>
+
+        <!-- Item 12 -->
+        <figure class="gallery-item">
+          <a href="#img12">
+            <img src="./img/g8.jpeg" alt="Museum Interior" loading="lazy" />
+            <div class="overlay">
+              <h3>Girl Child Support</h3>
+              <span>Portrait</span>
+            </div>
+          </a>
+        </figure>
+      </div>
+      </main>
+
+    <!-- FOOTER -->
+    <hr class="divider" />
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="container footer-grid">
+          <!-- About Section -->
+          <div class="footer-section footer-about">
+            <div class="footer-branding">
+              <img class="footer-logo" src="./img/ewrta.png" alt="EWRTA Logo" />
+              <h3>
+                <span class="emp">Empowered Women</span> Rising Trust
+                Association
+              </h3>
+            </div>
+            <p id="footer-description">
+              A women-led organization dedicated to empowering women, uplifting
+              the girl child, and building resilient communities.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li class="current"><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="./programs&initiatives.html">Programs</a></li>
+              <li><a href="./get-involved.html">Get Involved</a></li>
+              <li><a href="./leadership.html">Leadership</a></li>
+              <li><a href="./gallery.html">Gallery</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Initiatives -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Be A Member</h4>
+            <ul class="footer-links">
+              <li><a href="#">Join Us</a></li>
+              <li><a href="#">Support the Girl Child</a></li>
+              <li><a href="#">Partner With Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Contact Us</h4>
+            <ul class="footer-contact">
+              <li>
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>4 Hampshire Drive Eastlea, Harare</span>
+              </li>
+              <li>
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  ></path>
+                </svg>
+                <span>
+                  <pre>+971 55 341 5162</pre>
+                  <pre>+971 55 472 3048</pre>
+                </span>
+              </li>
+              <li>
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>info@empoweredwomenrising.org</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-content">
+          <p class="copyright">
+            © 2026 Empowered Women Rising Trust Association. All Rights
+            Reserved.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                ></path>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

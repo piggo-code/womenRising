@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact Empowered Women Rising Trust Association. Let's collaborate to empower women and uplift communities."
+    />
+
+    <title>EWRTA | Contact Us</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <style>
+      /* =============================================
+         CONTACT PAGE STYLES
+         Premium Corporate Design
+         ============================================= */
+
+      /* --- 1. CSS Variables & Setup --- */
+      :root {
+        --deep-purple: #2e0f3a;
+        --rich-purple: #5b2a86;
+        --gold: #d4af37;
+        --soft-gold: #f1e5ac;
+        --off-white: #f8f5f2;
+        --text-dark: #333333;
+
+        /* Typography */
+        --font-heading: "Montserrat", sans-serif;
+        --font-body: "Nunito Sans", sans-serif;
+
+        /* Spacing */
+        --space-xs: 0.5rem;
+        --space-sm: 1rem;
+        --space-md: 2rem;
+        --space-lg: 3rem;
+        --space-xl: 5rem;
+
+        /* Effects */
+        --radius: 8px;
+        --radius-lg: 16px;
+        --shadow-sm: 0 2px 4px rgba(46, 15, 58, 0.05);
+        --shadow-md: 0 8px 24px rgba(46, 15, 58, 0.1);
+        --shadow-lg: 0 15px 40px rgba(46, 15, 58, 0.15);
+        --transition: 200ms ease-in-out;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 400;
+        background-color: var(--off-white);
+        color: var(--text-dark);
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* --- 2. Utilities --- */
+      .container-1 {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--space-sm);
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* --- 3. Hero Section --- */
+      .hero-section {
+        background: linear-gradient(
+            135deg,
+            rgba(46, 15, 58, 0.88) 0%,
+            rgba(91, 42, 134, 0.85) 100%
+          ),
+          url("./img/Generate_a_highresolution_ultrarealistic_hero_bann_b337b7e0be.jpeg")
+            center/cover no-repeat;
+        color: #fff;
+        padding: var(--space-xl) 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+      }
+
+      /* Decorative subtle pattern */
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: radial-gradient(
+          circle at 80% 20%,
+          rgba(212, 175, 55, 0.12) 0%,
+          transparent 50%
+        );
+        pointer-events: none;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+      }
+
+      .hero-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        margin-bottom: var(--space-sm);
+        color: var(--gold);
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: var(--space-md);
+        line-height: 1.7;
+      }
+
+      /* --- 4. Buttons --- */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 32px;
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: var(--radius);
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: all var(--transition);
+      }
+
+      .btn-primary {
+        background-color: var(--gold);
+        color: var(--deep-purple);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--soft-gold);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-submit {
+        width: 100%;
+        background-color: var(--rich-purple);
+        color: white;
+        padding: 16px 32px;
+        border: none;
+        margin-top: var(--space-sm);
+      }
+
+      .btn-submit svg {
+        width: 18px;
+        height: 18px;
+        margin-left: 10px;
+        transition: transform var(--transition);
+      }
+
+      .btn-submit:hover {
+        background-color: var(--deep-purple);
+      }
+
+      .btn-submit:hover svg {
+        transform: translateX(5px);
+      }
+
+      .btn:focus {
+        outline: 3px solid var(--gold);
+        outline-offset: 2px;
+      }
+
+      /* --- 5. Main Layout (Grid) --- */
+      .main-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        padding-top: var(--space-xl);
+        padding-bottom: var(--space-xl);
+      }
+
+      @media (min-width: 900px) {
+        .main-grid {
+          grid-template-columns: 1fr 1.5fr;
+          align-items: start;
+        }
+      }
+
+      /* --- 6. Contact Info Sidebar --- */
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+      }
+
+      .info-card,
+      .social-card,
+      .map-container {
+        background: #fff;
+        padding: var(--space-md);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-sm);
+        border-top: 4px solid var(--gold);
+      }
+
+      h2 {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        color: var(--deep-purple);
+        margin-bottom: var(--space-sm);
+        font-weight: 700;
+      }
+
+      .info-list {
+        list-style: none;
+      }
+
+      .info-list li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: var(--space-md);
+      }
+
+      .info-list li:last-child {
+        margin-bottom: 0;
+      }
+
+      .info-icon {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(91, 42, 134, 0.05);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: var(--space-sm);
+        color: var(--rich-purple);
+      }
+
+      .info-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .info-list h3 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        color: #666;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
+      }
+
+      .info-list p,
+      .info-list a {
+        color: var(--text-dark);
+        text-decoration: none;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .info-list a:hover {
+        color: var(--rich-purple);
+      }
+
+      /* Social Icons */
+      .social-icons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .social-link1 {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        color: #666;
+        transition: all var(--transition);
+      }
+
+      .social-link1 svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .social-link1:hover {
+        background-color: var(--rich-purple);
+        border-color: var(--rich-purple);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      /* Map Placeholder */
+      .map-placeholder {
+        width: 100%;
+        height: 200px;
+        background-color: #e9e9e9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #999;
+        border-radius: var(--radius);
+        margin-top: var(--space-sm);
+      }
+
+      /* --- 7. Form Section --- */
+      .form-section {
+        background: #fff;
+        padding: var(--space-lg);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .form-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(90deg, var(--deep-purple), var(--gold));
+      }
+
+      .form-header {
+        margin-bottom: var(--space-md);
+      }
+
+      .form-header h2 {
+        margin-bottom: var(--space-xs);
+      }
+
+      .form-header p {
+        color: #666;
+      }
+
+      /* Form Grid */
+      .contact-form {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      @media (min-width: 600px) {
+        .contact-form {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .form-row {
+        display: contents;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-group.full-width {
+        grid-column: 1 / -1;
+      }
+
+      label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 8px;
+      }
+
+      input,
+      select,
+      textarea {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        padding: 14px 16px;
+        border: 1px solid #ddd;
+        border-radius: var(--radius);
+        background-color: #fff;
+        color: var(--text-dark);
+        transition: border-color var(--transition), box-shadow var(--transition);
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--gold);
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: #aaa;
+      }
+
+      select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1rem;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+
+    <header>
+      <div class="container">
+        <div class="header-left">
+          <img class="logo" src="./img/ewrta.png" alt="EWRTA Logo" />
+          <div id="branding">
+            <h1><span class="highlight">Empowered Women</span></h1>
+            <h1>Rising Trust Association</h1>
+          </div>
+        </div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="menu-icon" aria-label="Toggle Menu">
+          <span></span><span></span><span></span>
+        </label>
+        <nav>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./programs&initiatives.html">Programs</a></li>
+            <li><a href="./get-involved.html">Get Involved</a></li>
+            <li><a href="./leadership.html">Leadership</a></li>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li class="current"><a href="./contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero-section">
+      <div class="container-1 hero-content">
+        <h1 class="hero-title">Let's Collaborate</h1>
+        <p class="hero-subtitle">
+          Have a project in mind or want to partner with us? We'd love to hear
+          from you. Let's create impact together.
+        </p>
+        <a href="#contact-form" class="btn btn-primary">Send a Message</a>
+      </div>
+    </section>
+
+    <main>
+      <div class="container-1 main-grid">
+        <!-- Left Column: Info & Map -->
+        <aside class="contact-info">
+          <!-- Contact Details -->
+          <section class="info-card">
+            <h2>Contact Details</h2>
+            <ul class="info-list">
+              <li>
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Head Office</h3>
+                  <p>4 Hampshire Drive Eastlea, Harare<br />Zimbabwe</p>
+                </div>
+              </li>
+              <li>
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Phone</h3>
+                  <p>
+                    <a href="tel:+263123456789">
+                      <pre>+971 55 341 5162</pre>
+                      <pre>+971 55 472 3048</pre>
+                    </a>
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Email</h3>
+                  <p>
+                    <a href="mailto:info@ewrta.org"
+                      >info@empoweredwomenrising.org</a
+                    >
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Business Hours</h3>
+                  <p>
+                    Mon - Fri: 8:00 AM - 5:00 PM<br />Sat: 9:00 AM - 1:00 PM
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Social Media -->
+          <section class="social-card">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+              <a
+                href="https://www.facebook.com/share/g/1AYt1xGMow/?mibextid=wwXIfr"
+                aria-label="Facebook"
+                class="social-link1"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="LinkedIn" class="social-link1">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
+              <a href="#" aria-label="Instagram" class="social-link1">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+              <a href="#" aria-label="X Twitter" class="social-link1">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="WhatsApp" class="social-link1">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </section>
+
+          <!-- Map Placeholder -->
+          <section class="map-container">
+            <h2>Our Location</h2>
+            <div class="map-placeholder">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1932.4012568565777!2d31.067921619584283!3d-17.819522023634274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a4d7c6a3ce35%3A0x6d0fdbcb7d4e0f86!2s3%20Hampshire%2C%20Harare!5e0!3m2!1sen!2szw!4v1772180895465!5m2!1sen!2szw"
+                width="100%"
+                height="200px"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </section>
+        </aside>
+
+        <!-- Right Column: Form -->
+        <section id="contact-form" class="form-section">
+          <div class="form-header">
+            <h2>Send Us a Message</h2>
+            <p>
+              Fill out the form below and our team will get back to you within
+              24 hours.
+            </p>
+          </div>
+
+          <form action="#" method="POST" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input
+                  type="text"
+                  id="fullname"
+                  name="fullname"
+                  placeholder="Xxx Xxx"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="xxx@example.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+971 XXX XXX XXX"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>Select a topic</option>
+                  <option value="partnership">Partnership Inquiry</option>
+                  <option value="donation">Donations</option>
+                  <option value="volunteer">Volunteering</option>
+                  <option value="general">General Question</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Write your message here..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-submit">
+              <span>Submit Inquiry</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <hr class="divider" />
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="container footer-grid">
+          <!-- About Section -->
+          <div class="footer-section footer-about">
+            <div class="footer-branding">
+              <img class="footer-logo" src="./img/ewrta.png" alt="EWRTA Logo" />
+              <h3>
+                <span class="emp">Empowered Women</span> Rising Trust
+                Association
+              </h3>
+            </div>
+            <p id="footer-description">
+              A women-led organization dedicated to empowering women, uplifting
+              the girl child, and building resilient communities.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="./programs&initiatives.html">Programs</a></li>
+              <li><a href="./get-involved.html">Get Involved</a></li>
+              <li><a href="./leadership.html">Leadership</a></li>
+              <li><a href="#">Gallery</a></li>
+            </ul>
+          </div>
+
+          <!-- Initiatives -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Be A Member</h4>
+            <ul class="footer-links">
+              <li><a href="#">Join Us</a></li>
+              <li><a href="#">Support the Girl Child</a></li>
+              <li><a href="#">Partner With Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Contact Us</h4>
+            <ul class="footer-contact">
+              <li>
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span> 4 Hampshire Drive Eastlea, Harare </span>
+              </li>
+              <li>
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  ></path>
+                </svg>
+                <span>
+                  <pre>+971 55 341 5162</pre>
+                  <pre>+971 55 472 3048</pre>
+                </span>
+              </li>
+              <li>
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>info@empoweredwomenrising.org</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-content">
+          <p class="copyright">
+            © 2026 Empowered Women Rising Trust Association. All Rights
+            Reserved.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                ></path>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
